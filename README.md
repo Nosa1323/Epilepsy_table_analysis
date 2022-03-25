@@ -30,9 +30,15 @@ There are four scenarios for available data analysis:
 **Dependencies**
 
 Python 3.8.8
+
 glob2 0.7
+
 numpy 1.21.2
+
 pandas 1.3.5
+
 matplotlib 3.5.0
+
 seaborn 0.11.2
+
 scipy 1.7.3
