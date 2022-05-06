@@ -1,4 +1,4 @@
-# pandas_table_analysis
+# epilepsy_table_analysis
 A script designed to facilitate routine tables procedures for the analysis of tables obtained from fluorescent images
 
 **The aim of this script** is obtaining figure and statitical pivot tables based on input data. Aditionaly, it provides a great opportunity to improve pandas knowledge.
