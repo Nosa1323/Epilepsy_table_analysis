@@ -4,13 +4,13 @@ import pandas as pd
 import numpy as np
 import os
 
-def csv_to_xlsx():
-    csv_search_string = '*/**.csv'
+def csv_to_xlsx(search_path):
+    csv_search_string = f'{search_path}.csv'
     csv_filepaths = glob.glob(csv_search_string)
     df = pd.DataFrame()
     for csv in csv_filepaths:
         out = csv.split('.')[0]+'.xlsx'
-        if 'GS'in csv: 
+        if ('GS'in csv) or ('s100b' in csv) or ('GFAP' in csv):  
             df = pd.read_csv(csv, sep=',', decimal = ',', encoding='latin1',engine='python')
         else:
             df = pd.read_csv(csv, sep=';', decimal = ',', encoding='latin1',engine='python')
@@ -18,7 +18,7 @@ def csv_to_xlsx():
     return (df)
 
 def file_extraction(search_string): 
-    filepaths = glob.glob(search_string) 
+    filepaths = glob.glob(f'{search_string}.xlsx') 
     df = pd.DataFrame()
     for find_files in filepaths:
         param = re.split ('_',find_files)

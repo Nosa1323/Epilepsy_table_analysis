@@ -43,7 +43,7 @@ def boxplot_fine_view(data, box_pairs,
     plt.figure(figsize=(3, 5))
     sns.set_theme(font_scale=1.5, style="ticks",context='notebook')
     plot = sns.boxplot(data = data, 
-                    palette="vlag",  linewidth = 3)
+                    palette="vlag", showfliers=False, linewidth = 3)
     
     add_stat_annotation(plot, data = data,
                     box_pairs=[box_pairs],
@@ -103,8 +103,8 @@ def adjust_box_widths(g, fac): # from https://stackoverflow.com/questions/568381
 
 
 def boxplot_hue(data, x, y, hue, box_pairs, figname, big_tick, ylim, figsize, loc): 
-    figname = f'figs/cell_count/{figname}.tif'
-    fig = plt.figure(figsize=figsize) # меняет размер графика
+    figname = f'figs/{figname}.tif'
+    fig = plt.figure(figsize=figsize)
     custom_params = {"axes.spines.right": False, "axes.spines.top": False}
     sns.set_theme(font_scale=1.5, style="ticks",context="notebook", rc= custom_params)
     plot = sns.boxplot(data = data, x = x, 
